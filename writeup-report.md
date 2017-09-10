@@ -29,7 +29,7 @@ This gave me 19026 images in total (9513 records in CVS file). I used generator 
 
 ![Traning](training.png)
 
-After that I tried my model with simulator and result was fine (see video.mp4). There were some lane crossing but car returned back to road quickly.
+After that I tried my model (see model.h5) with simulator and result was fine (see video.mp4). There were some lane crossing but car returned back to road quickly.
 
 ## Model Visualization
 
