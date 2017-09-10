@@ -27,7 +27,7 @@ This gave me 19026 images in total (9513 records in CVS file). I used generator 
 
 5 epoch was used for traning and here is how traning process looks like:
 
-![Traning](traning.png)
+![Traning](training.png)
 
 After that I tried my model with simulator and result was fine (see video.mp4). There were some lane crossing but car returned back to road quickly.
 
