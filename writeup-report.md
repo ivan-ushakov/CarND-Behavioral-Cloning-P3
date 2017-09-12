@@ -44,11 +44,11 @@ All traning data was collected with provided simulator. I used following strateg
 * All three cameras used
 * Each image has left-to-right flipped pair with inverted angle (see model.py lines 80-91)
 
-Here is how one shot from three cameras looks like:
+Here is how one shot from three cameras looks like (left, center, right):
 
-![Left Camera](resources/left_1.png)
-![Center Camera](resources/center_1.png)
-![Right Camera](resources/right_1.png)
+![Left Camera](resources/left_1.jpg)
+![Center Camera](resources/center_1.jpg)
+![Right Camera](resources/right_1.jpg)
 
 Traning data has following distribution:
 
