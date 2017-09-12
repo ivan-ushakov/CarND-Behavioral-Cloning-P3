@@ -15,6 +15,27 @@ For this project I decided to use convolutional network from publication "End-to
 
 The only difference is Normalization layer. I used Lambda layer with equation `color / 255.0 - 0.5` for normalization and Cropping2D layer to remove some top and bottom part of input image and avoid learning of unnecessary features like sky and car. All other layers are the same as publication has (see model.py lines 56-72).
 
+Here is model summary:
+
+Layer (type)                    | Output Shape         | Param #    | Connected to                     
+--------------------------------|----------------------|------------|----------------------
+lambda_1 (Lambda)               | (None, 160, 320, 3)  | 0          | lambda_input_1[0][0]             
+cropping2d_1 (Cropping2D)       | (None, 90, 320, 3)   | 0          | lambda_1[0][0]                   
+convolution2d_1 (Convolution2D) | (None, 43, 158, 24)  | 1824       | cropping2d_1[0][0]               
+convolution2d_2 (Convolution2D) | (None, 20, 77, 36)   | 21636      | convolution2d_1[0][0]            
+convolution2d_3 (Convolution2D) | (None, 8, 37, 48)    | 43248      | convolution2d_2[0][0]            
+convolution2d_4 (Convolution2D) | (None, 6, 35, 64)    | 27712      | convolution2d_3[0][0]            
+convolution2d_5 (Convolution2D) | (None, 4, 33, 64)    | 36928      | convolution2d_4[0][0]            
+flatten_1 (Flatten)             | (None, 8448)         | 0          | convolution2d_5[0][0]            
+dense_1 (Dense)                 | (None, 100)          | 844900     | flatten_1[0][0]                  
+dense_2 (Dense)                 | (None, 50)           | 5050       | dense_1[0][0]                    
+dense_3 (Dense)                 | (None, 10)           | 510        | dense_2[0][0]                    
+dense_4 (Dense)                 | (None, 1)            | 11         | dense_3[0][0]                    
+
+* Total params: 981,819
+* Trainable params: 981,819
+* Non-trainable params: 0
+
 For training I used Adam optimizer to avoid manual learning rate tuning and MSE for loss function. 
 
 All traning data was collected with provided simulator. I used following strategy:
